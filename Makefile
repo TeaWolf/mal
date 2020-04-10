@@ -94,7 +94,7 @@ IMPLS = ada ada.2 awk bash basic bbc-basic c chuck clojure coffee common-lisp cp
 	guile haskell haxe hy io java js jq julia kotlin livescript logo lua make mal \
 	matlab miniMAL nasm nim objc objpascal ocaml perl perl6 php picolisp pike plpgsql \
 	plsql powershell ps python python.2 r racket rexx rpython ruby rust scala scheme skew \
-	swift swift3 swift4 swift5 tcl ts vala vb vhdl vimscript wasm wren yorick zig my_yasm_mal
+	swift swift3 swift4 swift5 tcl ts vala vb vhdl vimscript wasm wren yorick zig my_yasm_mal my_clojure
 
 EXTENSION = .mal
 
@@ -269,6 +269,7 @@ yorick_STEP_TO_PROG =        impls/yorick/$($(1)).i
 zig_STEP_TO_PROG =           impls/zig/$($(1))
 
 my_yasm_mal_STEP_TO_PROG = impls/my_yasm_mal/$($(1))
+my_clojure_mal_STEP_TO_PROG = impls/my_clojure/$($(1))
 
 #
 # General settings and utility functions
