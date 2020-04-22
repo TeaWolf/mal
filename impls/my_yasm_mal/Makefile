@@ -1,5 +1,5 @@
 
-step0_repl: $@.o
+step0_repl: step0_repl.o
 	ld -g -o $@ $@.o
 
 step0_repl.o: step0_repl.asm
@@ -23,8 +23,16 @@ string_test.o: string_test.asm
 memory_management.o: memory_management.asm
 	yasm -Worphan-labels -g dwarf2 -f elf64 $(basename $@).asm -l $(basename $@).lst
 
+memory_test.o: memory_test.asm
+	yasm -Worphan-labels -g dwarf2 -f elf64 $(basename $@).asm -l $(basename $@).lst
+
+memory_test: memory_test.o print.o string.o memory_management.o
+	ld -g -o $@ $^
+
 linked_list.o: linked_list.asm
 	yasm -Worphan-labels -g dwarf2 -f elf64 $(basename $@).asm -l $(basename $@).lst
+
+
 
 clean:
 	rm -f *.o *.lst
