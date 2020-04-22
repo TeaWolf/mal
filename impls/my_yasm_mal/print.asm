@@ -13,6 +13,8 @@ section .text
 extern stringLength
 
         ;; Prints a null terminated string
+        ;; rdi <- addresse of string
+        ;; 
 global printString
 printString:
         push rbp
